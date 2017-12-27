@@ -1,0 +1,173 @@
+\ProvidesPackage{novamath-thm}
+
+\usepackage{amsthm} % AMS Theōrēmata
+\usepackage{mdframed} % Corpus theōrēmatum
+
+\newtheoremstyle{theorema}
+  {}% Spatium super
+  {}% Spatium īnfrā
+  {\itshape}% Corpus
+  {}% Endens
+  {\bfseries}% Caput
+  {.\\}% Punctuātiō capitis
+  { }% Spatium sequēns caput
+  {\thmnumber{#2}\ifx#3\relax\relax\thmname{ #1}\else\thmnote{ #3}\fi}
+
+\theoremstyle{theorema}
+\newtheorem{theorema}                  {Theōrēma}[section]
+\newtheorem{theoremaSchema}  [theorema]{Theōrēma Schēma}
+\newtheorem{propositio}      [theorema]{Prōpositiō}
+\newtheorem{propositioSchema}[theorema]{Prōpositiō Schēma}
+\newtheorem{lemma}           [theorema]{Lemma}
+\newtheorem{lemmaSchema}     [theorema]{Lemma Schēma}
+\newtheorem{corollaria}      [theorema]{Corōllāria}
+\newtheorem{corollariaSchema}[theorema]{Corōllāria Schēma}
+\newtheorem{aequivalentia}   [theorema]{Æquivalentia}
+\newtheorem{identitas}       [theorema]{Īdentitās}
+\newtheorem{algorithmus}     [theorema]{Algorithmus}
+\newtheorem{conjectura}{Conjectūra}[section]
+\newtheorem{problema}{Problēma}[section]
+
+\theoremstyle{remark}
+\newtheorem*{nota}{Nota}
+\newtheorem*{cave}{Cavē}
+
+\newcommand{\assume}[1]{(Assūmptiō: $#1$)}
+
+\newenvironment{Metadefinitio}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=magenta!60!black,
+		linewidth=2pt,
+		frametitle=Metadēfīnītiō,
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\newenvironment{DefinitioSchema}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=orange!50!yellow,
+		linewidth=2pt,
+		frametitle=Dēfīnītiō Schēma,
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\newenvironment{Definitio}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=orange,
+		linewidth=2pt,
+		frametitle=Dēfīnītiō,
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\newenvironment{Axioma}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=red,
+		linewidth=2pt,
+		frametitle={#1},
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\newenvironment{AxiomaSchema}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=red!20!purple,
+		linewidth=2pt,
+		frametitle=#1,
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\newenvironment{exemplum}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=blue,
+		linewidth=2pt,
+		frametitle=Exemplum: {#1},
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		backgroundcolor=gray!2,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+\NewDocumentEnvironment{demonstratio}{o}
+{\IfValueTF{#1}{\emph{Dēmōnstrātiō dē} #1.\\}{\emph{Dēmōnstrātiō.}}
+}
+{
+	\qed
+}
+
+
+% {\thmnumber{#2}\ifx#3\relax\relax\thmname{ #1}\else\thmnote{ #3}\fi}
+\NewDocumentEnvironment{Rtheorema}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Theōrēma.}}\\
+               \itshape
+}{$ $\newline}
+\NewDocumentEnvironment{RtheoremaSchema}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Theōrēma Schēma.}}\\
+               \itshape
+}{$ $\newline}
+\NewDocumentEnvironment{Rpropositio}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Prōpositiō.}}\\
+               \itshape
+}{$ $\newline}
+\NewDocumentEnvironment{RpropositioSchema}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Prōpositō Schēma.}}\\
+               \itshape
+}{$ $\newline}
+\NewDocumentEnvironment{Rlemma}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Lemma.}}\\
+               \itshape
+}{$ $\newline}
+\NewDocumentEnvironment{RlemmaSchema}{o m}
+{\noindent
+ \IfValueTF{#1}{{\bfseries #2 #1.}}
+               {{\bfseries #2 Lemma Schēma.}}\\
+               \itshape
+}{$ $\newline}
+

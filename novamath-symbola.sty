@@ -1,0 +1,674 @@
+\ProvidesPackage{novamath-symbola}
+
+% Modulī textī:
+
+\usepackage{xparse} % \NewDocumentCommand
+\usepackage{xkeyval} % Argūmenta cum nōminibus
+\usepackage{xstring} % Comparātiō stringārum
+
+\usepackage[euler]{textgreek} % Litterae Graecae in textīs
+\usepackage{xcolor} % Colorēs
+
+% Modulī mathematicae:
+% Nolī carricāre problēmaticum modulum "commath"!
+
+\usepackage{bm} % Symbolum crassum
+\usepackage{bbm} % Symbolum crassum tabellae
+\usepackage{scalerel} % Dilatāre symbolōrum
+\usepackage{subdepth} % Collīneāre subscrīpta
+
+\usepackage{amssymb} % AMS Symbola
+\usepackage{amsmath} % AMS Math
+
+\usepackage{upgreek} % Ērectae litterae Graecae
+\usepackage[all]{xy} % Xy-Pic Diagrammata Commūtātīva
+\usepackage{esint} % Symbola integrātiōnis
+\usepackage{mathtools} % \coloneqq, Laevum subscrīptum
+\usepackage{stmaryrd} % Symbola Informaticae \llbracket,\rrbracket
+
+% Macrōnēs modī textī
+\newcommand{\Fsigma}{F\textsubscript{\textsigma}\,} % F-sigma
+\newcommand{\Gdelta}{G\textsubscript{\textdelta}\,} % G-delta
+
+% Macrōnēs modī mathematicae
+
+\newcommand\sit\coloneqq % $a \sit b$ dat a := b
+\let\cpunc\cdot
+\let\puncti\dots
+\let\cpuncti\cdots
+\let\vpuncti\vdots
+
+\let\cdot\undefined
+%\let\dots\undefined
+\let\cdots\undefined
+\let\vdots\undefined
+
+% Rēctae litterae Graecae
+\newcommand{\Epsilon}{\mathrm E}
+
+% Rēctae litterae Graecae quae in 'upgreek' nōn existant.
+\newcommand{\Upbeta}{\mathsf B}
+\newcommand{\Upomicron}{\mathsf O}
+\newcommand{\upomicron}{\mathsf o}
+
+% Symbola Logica
+\let\non\not
+\let\lNon\neg % nōn
+\let\naeq\neq % Nōn equālitās
+\let\lEt\land % et
+\let\lVel\lor % vel
+\let\lAdf\rightarrow % Adfirmātiō
+\let\lpmI\leftarrow % Reversa Implicātiō
+\let\lAeq\leftrightarrow % Aequivalentia
+\let\proomn\forall % Prō omnī
+\let\exist\exists % Existit
+\let\nexist\nexists % Nōn existit
+\let\aequi\equiv % Aequivalentia prōpositiōnum
+\let\concludit\models % Conclusiō
+\let\deter\mapsto % Dētermināre
+\newcommand{\substi}[1]{\left[ #1 \right]} % Substutiō
+
+\let\adfirmat\implies
+\let\sems\iff % Sī et modo sī
+
+%\let\not\undefined
+%\let\neg\undefined
+\let\mapsto\undefined
+\let\neq\undefined
+\let\land\undefined
+\let\lor\undefined
+\let\forall\undefined
+\let\exists\undefined
+\let\nexists\undefined
+\let\equiv\undefined
+%\let\models\undefined
+
+\let\implies\undefined
+\let\iff\undefined
+
+% Theōria Cōpiārum
+\newcommand{\axiomaZF}{\mathsf{ZF}} % Axiōma Zermelo-Fraenkel
+\newcommand{\axiomaE}{\mathsf{E}} % Axiōma Ēlēctiōnis
+\newcommand{\axiomaUF}{\mathsf{UF}} % Axiōma Ultrāfiltrī
+\newcommand\vacua\varnothing % Copia vacua
+\let\emptyset\undefined
+
+\let\subcop\subseteq % Subcōpia
+\let\supcop\supseteq % Supercōpia
+\let\subcopv\subset % Subcōpia vēra
+\let\supcopv\supset % Supcōpia vēra
+\let\subseteq\undefined
+\let\supseteq\undefined
+\let\subset\undefined
+\let\supset\undefined
+
+\newcommand{\habeat}{:} % {x\habeat F(x)}
+
+\let\cjun\cup % Conjūnctiō
+\let\isec\cap % Intersectiō
+\let\magcjun\bigcup % (Magnum Symbolum) Conjūnctiō
+\let\magisec\bigcap % (Magnum Symbolum) Intersectiō
+\let\copdiff\setminus
+\let\symdiff\triangle % Symmētrica differentia
+
+\let\cup\undefined
+\let\cap\undefined
+\let\bigcup\undefined
+\let\bigcap\undefined
+\let\setminus\undefined
+
+\NewDocumentCommand \Potens {o m} % Copia potēns. Parametra: \Potens[ord]{Set}
+{
+	\boldsymbol{\mathcal P}
+	\IfValueT{#1}{ _{#1} }
+	( #2 )
+}
+\newcommand{\paro}[2]{(#1;#2)} % Pār ōrdināta
+\let\pcart\times % Productum Cartesiānum
+\let\magpcart\prod % Productum Cartesiānum
+\DeclareMathOperator{\img}{img} % Imāgō relātiōnis
+\DeclareMathOperator{\iimg}{img^{-1}} % Inversa imāgō relātiōnis
+\newcommand{\inv}{{\operatorname{-1}}} % Relātiō Inversa
+\let\cposit\circ % Relātiōnum compositō
+
+\let\adf\to % X \adf Y: X -> Y
+\newcommand{\iden}{\operatorname{id}} % Applicātiō īdentitās
+\newcommand{\restrictio}{\mathord{\upharpoonright}} % Restrictiō relātiōnis
+\newcommand{\SA}[2]{[#1 \to #2]} % Spatium applicātiōnum
+\newcommand{\potens}{\rightarrow} % Applicātiō potēns (f^\potens)
+\newcommand{\ipotens}{\leftarrow} % Inversa applicātiō potēns (f^\ipotens)
+\newcommand{\inclusio}{\hookrightarrow} % Inclūsiō
+\newcommand{\album}[1]{\begin{bmatrix} #1 \end{bmatrix}} % album
+\newcommand{\Fin}{\mathsf{Fin}} % Classis cōpiārum fīnītārum
+
+\let\simMa\gtrsim % Similis vel mājor
+\let\simMi\lesssim % Similis vel minor
+\let\aeqMa\geq % Æquālis vel mājor
+\let\aeqMi\leq % Æquālis vel minor
+\let\prae\prec % Praecēdēns
+\let\aeqPr\preceq % Æquālis vel praecēdēns
+% \succ: Succēdēns
+\let\aeqSu\succeq % Æquālis vel succēdēns
+
+\let\gtrsim\undefined
+\let\lesssim\undefined
+\let\geq\undefined
+\let\leq\undefined
+\let\prec\undefined
+\let\preceq\undefined
+\let\succeq\undefined
+
+\NewDocumentCommand \aeclass {o m} % Classis aequivalentiae. P.: \aeclass[=]{x}
+{
+	[ #2 ] \IfValueT{#1}{ _{#1} }
+}
+\NewDocumentCommand \Min {o} % Cōpia Minimōrum
+{\operatorname{Min}\IfValueT{#1}{^{#1}}}
+\NewDocumentCommand \Max {o} % Cōpia Maximōrum
+{\operatorname{Max}\IfValueT{#1}{^{#1}}}
+\NewDocumentCommand \Inf {o}
+{\operatorname{Inf}\IfValueT{#1}{^{#1}}}
+\NewDocumentCommand \Sup {o}
+{\operatorname{Sup}\IfValueT{#1}{^{#1}}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+% Intervallum:
+% Discrētum (Integrum):    \ival[i]{a}{b} dat [[a..b]]
+% Discrētum radiāns:       \ival[ir]{a} dat [a..]
+% Clausum:                 \ival{a}{b} dat [a,b]
+% Apertum:                 \ival[a]{a}{b} dat ]a,b[
+% Laevum semi-apertum:     \ival[al]{a}{b} dat ]a,b]
+% Dextrum semi-apertum:    \ival[ad]{a}{b} dat [a,b[
+% Clausum laevum radiāns:  \ival[rl]{a} dat [a,->]
+% Clausum dextrum radiāns: \ival[rd]{a} dat [<-,a]
+% Apertum laevum radiāns:  \ival[ral]{a} dat ]a,->]
+% Apertum dextrum radiāns: \ival[rad]{a} dat [<-,a[
+\NewDocumentCommand \ival {o g g} % Intervallum
+{
+	\IfValueTF{#1}
+	{
+		\IfStrEqCase{#1}
+		{
+			{i}{\left\llbracket #2 \mathinner{\ldotp\ldotp} #3 \right\rrbracket}
+			{ir}{\left\llbracket #2 \mathinner{\ldotp\ldotp}\!\!\rightarrow
+				\right\rrbracket}
+			{a}{\left] #2, #3 \right[}
+			{al}{\left] #2, #3 \right]}
+			{ad}{\left[ #2, #3 \right[}
+			{rl}{\left[ #2, \rightarrow\right]}
+			{rd}{\left[\leftarrow, #2\right]}
+			{ral}{\left] #2, \rightarrow \right]}
+			{rad}{\left[\leftarrow, #2\right[}[]
+		}
+	}{
+		\left[ #2, #3 \right]
+	}
+}
+
+\let\pn\pm % Positīvus/Negātivus
+\let\pm\undefined
+\newcommand{\NNatural}{{\mathbb N}}
+\newcommand{\NIntegri}{{\mathbb Z}}
+\newcommand{\NPrimi}{{\mathbb P}}
+\newcommand{\NRational}{{\mathbb Q}}
+\newcommand{\NReal}{{\mathbb R}}
+\newcommand{\NComplex}{{\mathbb C}}
+\newcommand{\NRealE}{{\overline{\Reales}}}
+\newcommand{\NComplexE}{{\overline{\Complexes}}}
+% Integrī > 0: \NIntegri_\pos
+% Reālēs > 0: \NReales_\pos
+\newcommand{\pos}{{\scaleobj{0.85}{+}}}
+
+\newcommand{\card}[1]{\upkappa(#1)} % Cardinālitās
+\newcommand{\Ordinal}{\mathsf{Ord}}
+\newcommand{\ordN}{\omega} % Ordinalis Numerorum Naturalium
+\DeclareMathOperator*{\magcirc}{\bigcirc}
+
+\let\inftas\infty % Īnfīnītās
+\let\infty\undefined
+
+% Sequentia, Rēte, et familia indexāta
+% \seq repraesentat sequentiās et rētēs.
+% \familia repraesentat familiās indexātās
+% 
+% Cum convergendum nōn sit significāns, \familia ūtere.
+% Cum cōpia indexāns nōn ōrdināta sit, \familia ūtere.
+%
+% \seq{x_i}_{i \in N}, \familia{S_x}_{x \in X}
+\newcommand{\familia}[1]{\left( #1 \right)}
+\newcommand{\seq}[1]{\langle #1 \rangle}
+
+% Algebra
+\NewDocumentCommand \abs {g} % Magnitūdō absolūta
+{
+	\left|
+	\IfValueTF{#1} { #1 }{ \cpunc }
+	\right|
+}
+\let\dividit\mid % Dīvīsibilis
+\let\ndividit\nmid % Nōn dīvīsibilis
+\DeclareMathOperator{\restans}{mod} % Restāns
+\DeclareMathOperator{\mcd}{mcd} % Maximus commūnis dīvīsor
+\DeclareMathOperator{\mcm}{mcm} % Minimus commūnis multiplus
+\let\congm\aequi % Congruēns modulō ...
+
+% Grex
+\NewDocumentCommand \eid {o} % Īdentitās Elementum
+{{\upepsilon\IfValueT{#1}{_{#1}}}}
+% Inversum gregis
+\NewDocumentCommand \ginv {o m}
+{
+	\operatorname{inv}\IfValueT{#1}{_{#1}}(#2)
+}
+% Grex Ūnitātum \GUnit{(X,\circ)}
+\newcommand{\GUnit}[1]{\operatorname{\bar{U}} #1} 
+% Grex Centrālizātor
+\NewDocumentCommand \GCent {o m}
+{
+	\operatorname{Cent}\IfValueT{#1}{_{#1}}(#2)
+}
+% Potentia gregis
+% \gexp[fūnc. bīnāria]{elementum}{n}
+\NewDocumentCommand \gexp {o m m}
+{
+	\exp\IfValueT{#1}{_{#1}}\left(#2,#3\right)
+}
+\NewDocumentCommand \GCyc {o m} % Grex cyclicus generātōris
+{
+	\langle #2 \rangle\IfValueT{#1}{_{#1}}
+}
+\newcommand{\GSym}[1]{\operatorname{Sym}(#1)} % Grex Symmētricus
+\newcommand{\GAlt}[1]{\operatorname{Alt}(#1)} % Grex Alternāns
+\newcommand{\cyc}[1]{\operatorname{cyc}(#1)} % Cyclus
+\newcommand{\gind}[2]{[#1:#2]} % Index Subgregis
+\let\magocrux\bigotimes
+\let\oadd\oplus
+\let\ocrux\otimes
+
+% Spatium:
+%		Homomorphismōrum
+%		Isomorphismōrum
+%		Endomorphismōrum
+%		Automorphismōrum
+\newcommand{\SHom}[2]{\operatorname{Hom}\!\left[#1 \adf #2\right]}
+\newcommand{\SIso}[2]{\operatorname{Iso}\!\left[#1 \adf #2\right]}
+\newcommand{\SEnd}[1]{\operatorname{End}\!\left[#1\right]}
+\newcommand{\SAut}[1]{\operatorname{Aut}\!\left[#1\right]}
+
+% Ānellī
+
+\let\crux\times % *
+\let\times\undefined
+\DeclareMathOperator{\achar}{char} % Characteristica Ānellī
+
+\newcommand{\ASeriesP}[1]{#1[[]]} % Cōpia Seriērum Potentium
+\newcommand{\APoly}[1]{#1[]} % Cōpia Polynomiōrum
+\DeclareMathOperator{\grd}{grd} % Gradus Polynomiī
+
+\newcommand{\kdelta}{\updelta} % Kroneckerī delta
+\newcommand{\conj}[1]{\overline{#1}} % Conjugātiō complexā
+\let\Re\relax
+\let\Im\relax
+\DeclareMathOperator{\Re}{Re} % Reālis pars numerī complexī
+\DeclareMathOperator{\Im}{Im} % Imāgīnaria pars numerī complexī
+\DeclareMathOperator{\sgn}{sgn} % Signum
+
+% Cōnstantēs
+\newcommand{\Imag}{\mathrm i\mkern1mu} % Numerus imāginārius
+\newcommand{\E}{\mathrm e} % Numerus Eulerus
+\newcommand{\PI}{{\scalerel*{\uppi}{\pi}}} % Numerus Pi
+\newcommand{\imin}[1]{\left\lfloor #1 \right\rfloor} % "Integer minor"
+\newcommand{\imax}[1]{\left\lceil #1 \right\rceil} % "Integer major"
+
+% Algebra Līneāris
+% Spatium Vectōriāle generātum ā vectōribus (Ang. span)
+\DeclareMathOperator{\vect}{Vect}
+\newcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}} % Mātrīx
+\renewcommand{\vec}[1]{\boldsymbol{#1}} % Vector
+\newcommand{\mcomp}[1]{\mathit{#1}} % Compōnēns mātrīcis
+\newcommand{\vcomp}[1]{\mathit{#1}} % Compōnēns vectōris
+\newcommand{\vconcat}{\boldsymbol\oplus} % Concatēnātiō vectōris
+
+% Basis spatiī Euclideī
+% Arg: N. Dīmensiōnum, Index
+\NewDocumentCommand \vbasis {o m} % Basis spatiī Euclideī
+{
+	{\vec{e}}
+	\IfValueT{#1}{ ^{#1} }
+	\IfValueT{#2}{ _{#2} }
+}
+% Converāre applicātiōnem līneārem ad mātrīcem
+%
+% \AdMat{ Fūnctiō }{ Basis 1 }{ Basis 2 }
+% \AdMat{ Vector }{ Basis }
+\NewDocumentCommand \AdMat {g g g}
+{
+	\operatorname{Mat}
+	\IfValueTF{#3}{
+		_{#2,#3}
+	}{
+		\IfValueT{#2}{
+			_{#2}
+		}
+	}
+	\IfValueT{#1}{
+		\left( #1 \right)
+	}
+}
+\NewDocumentCommand \GGL {d<> g} % Grex līneāris generālis: \GGL<dim>{Corpus}
+{
+	\operatorname{GL}_{#1}(#2)
+}
+
+% Topologia
+\newcommand{\finis}{\partial} % Fīnis cōpiae $\finis C$
+\newcommand{\CCompact}[1]{\mathfrak{K}( #1 )} % Copiae compactae
+% Spatium applicātiōnum continuārum
+% Parametra:
+% \SC[c/0/u]<ōrdō>{Dominium}{Co-dominium}
+% c: Supportō compactō
+% 0: Ēvānēscēns in īnfīnītāte
+% ōrdō: ōrdō differentiātiōnis. 'inf' (īnfīnītās) esse potest.
+\NewDocumentCommand \SC {o d<> g g}
+{
+	\operatorname{C}
+	\IfValueT{#1}
+	{
+		_{
+		\IfStrEqCase{#1}
+		{
+			{c}{\mathsf c}
+			{0}{\mathsf 0}
+		}[]
+		}
+	}
+	\IfValueT{#2}
+	{
+		^{\IfStrEqCase{#2} {{inf}{\inftas}}[#2]}
+	}
+	\IfValueT{#3}
+	{
+		[ #3 \IfValueT{#4}{\to #4} ]
+	}
+}
+\DeclareMathOperator{\Glob}{Glob} % Globus apertus
+\NewDocumentCommand \SCf {g g} % Spatium applicātiōnum confīnītārum
+{
+	\operatorname{B}
+	\IfValueT{#1}{ [ #1 \to #2 ] }
+}
+% Convergēntia
+% x convergit ad y: x \cverg y
+% x convergit ad y in A: x \cverg{A} y
+\NewDocumentCommand \cverg {g}
+{
+	\IfValueTF{#1}
+	{
+		\overset{#1}{\to}
+	}{
+		\to
+	}
+}
+\let\ad\to % \lim_{x \ad y}
+
+% Analysis
+\newcommand{\unif}{\mathsf u} % Uniformis (d_\unif solum)
+\DeclareMathOperator{\supp}{supp} % Supportum
+\newcommand{\adL}{{\scalerel*{\nearrow}{+}}} % Līmes laevus
+\newcommand{\adD}{{\scalerel*{\searrow}{+}}} % Līmes dexter
+
+% Differentiātiō
+\newcommand{\Dif}{\mathop{}\!\mathrm D} % Operātor differentiātiōnis
+\newcommand{\dif}{\mathop{}\!\mathrm d} % Differentiālis
+\newcommand{\DifL}{\overrightarrow{\Dif}} % Operātor differentiātiōnis laevae
+\newcommand{\DifD}{\overleftarrow{\Dif}} % Operātor differentiātiōnis dextrae
+\NewDocumentCommand \od {o m m} % Dērīvātīvum ōrdinārium
+{
+	\IfValueTF{#1}
+	{
+		\frac{\dif^{#1} #2}{\dif #3^{#1}}
+	}{
+		\frac{\dif #2}{\dif #3}
+	}
+}
+\NewDocumentCommand \pd {o m m} % Dērīvātīvum partiāle
+{
+	\IfValueTF{#1}
+	{
+		\frac{\partial^{#1} #2}{\partial #3^{#1}}
+	}{
+		\frac{\partial #2}{\partial #3}
+	}
+}
+\newcommand{\detin}[1]{\left. #1 \right|} % Dētermināre in...
+
+% Symbola asymptōtica: \Asy[ Līmes ]{ Fūnctiō }
+\NewDocumentCommand \AsyO  {o g} { \Upomicron ( #2\IfValueT{#1}{, #1 } ) }
+\NewDocumentCommand \AsyOm {o g} { \Upomega   ( #2\IfValueT{#1}{, #1 } ) }
+\NewDocumentCommand \AsyTh {o g} { \Uptheta   ( #2\IfValueT{#1}{, #1 } ) }
+\NewDocumentCommand \Asyo  {o g} { \upomicron ( #2\IfValueT{#1}{, #1 } ) }
+\NewDocumentCommand \Asyom {o g} { \upomega   ( #2\IfValueT{#1}{, #1 } ) }
+\let\asyeq\asymp % Aequivalentia asymptōtica
+\renewcommand{\asymp}{\preceq} % Asymptōticum ...
+
+% Analysis Fūnctiōnum et Algebra Līneāris
+\newcommand{\annihil}{\mathsf 0} % Annihilātor
+\newcommand{\dual}{{\scalerel*{\ast}{\intercal}}} % Duāle
+\newcommand{\cdual}{{\scalerel*{\mathsf T}{\intercal}}} % Duāle continuum
+\newcommand{\hdual}{{\scalerel*{\mathsf H}{\intercal}}} % Duāle conjugātiōnis
+\newcommand{\transpos}{\intercal} % Transpositiō
+\newcommand{\htranspos}{{\boldsymbol\hdual}} % Transpositiō conjugātiōnis
+% \perp % Orthogōnālitās
+\let\ortho\perp % Orthogōnalis ... e.g. x \ortho y
+\let\ocomp\perp % Complementum orthogōnale e.g. C^\ocomp
+\let\pscalar\cpunc % Productum scālāre
+\let\pvect\times % Productum vectoriāle
+\DeclareMathOperator{\proj}{proj} % Prōjectiō orthogōnalis
+
+% Nōrma:
+% \norm: ||.||
+% \norm{x}: ||x||
+% \norm<n>{x}: ||x||_n, n numerō
+% \norm<inf>{x}: ||x||_īnfīnītās
+% \norm<u>{x}: ||x||_u
+% \norm{x}_X: ||x||_X
+\NewDocumentCommand \norm {d<> g}
+{
+	\left\lVert
+	\IfNoValueTF{#2}
+	{
+		\cpunc
+	}{
+		#2
+	}
+	\right\rVert
+	\IfValueT{#1}
+	{
+		_{
+		\IfStrEqCase{#1}
+		{{u}{\unif} {inf}{\inftas}}[#1]
+		}
+	}
+}
+% Productum interius:
+% \pinter: <.,.>
+% \pinter{x}{y}: <x,y>
+%
+% Nota:
+% \conj{\pinter{...}}_X est melius quam \conj{\pinter{...}_X}
+\NewDocumentCommand \pinter {g g}
+{
+	\left\langle
+	\IfNoValueTF{#1}
+	{
+		\cpunc,\cpunc
+	}{
+		#1,#2
+	}
+	\right\rangle
+}
+
+% Analysis Reālis
+\newcommand{\indic}[1]{{\mathbbm{1}_{#1}}}  % Fūnctiō indicātor \indic{S}
+\NewDocumentCommand \mpuaeq {g} % Paene ubique aequivalentia
+{
+	\IfValueTF{#1}
+	{\stackrel{#1\operatorname{-p.u.}}{=}}
+	{\stackrel{\operatorname{p.u.}}{=}}
+}
+\NewDocumentCommand \mpuc {g} % paene ubique convergentia
+{
+	\IfValueTF{#1}
+	{\stackrel{#1\operatorname{-p.u.}}{\longrightarrow}}
+	{\stackrel{\operatorname{p.u.}}{\longrightarrow}}
+}
+% Spatium mēnsūrābilium fūnctiōnum
+% \SMens[M \adf N]{X,Y}
+% \SMens* classēs aequivalentiae repraesentat.
+\NewDocumentCommand \SMens {s o m m}
+{
+	\operatorname{Mens} \IfValueT{#2}{ _{#2} }
+	[ #3 \to #4 ]
+	\IfBooleanT{#1} {/\!\stackrel{\operatorname{p.u.}}{=}}
+}
+\NewDocumentCommand \CBorel {g} % Cōpiae Borel
+{
+	\mathfrak{B}
+	\IfValueT{#1}{_{#1}}
+}
+\NewDocumentCommand \CBaire {g} % Cōpiae Baire
+{
+	\mathfrak{B}^{\!\circ}
+	\IfValueT{#1}{_{#1}}
+}
+\NewDocumentCommand \Sl {d<> g} % Spatium lp: \Sl<exp>{X}
+{
+	\ell
+	\IfValueT{#1}
+	{^{
+		\IfStrEqCase{#1}{{inf}{\inftas}}[#1]
+	}}
+	\IfValueT{#2}{ \!( #2 ) }
+}
+% \SL* dat classēs aequivalentiae (L-)
+% \SL[loc] dat fūnctiōnēs integrābilēs locālēs
+\NewDocumentCommand \SL {s o d<> g} % Spatium Lp: \SL[loc]<exp>{X}
+{
+	\IfBooleanTF{#1}
+	{
+		\operatorname{\text{\upshape \L}}
+	}{
+		\operatorname{L}
+	}
+	\IfValueT{#2}{ _{\IfStrEqCase{#2}{{loc}{\mathsf{loc}}}[#2]} }
+	\IfValueT{#3}
+	{^{\!
+		\IfStrEqCase{#3}{{inf}{\inftas}}[#3]
+	}}
+	\IfValueT{#4}{ ( #4 ) }
+	% \IfBooleanT{#1} {\!/\!\stackrel{\mathrm{a.e.}}{=}}
+}
+\DeclareMathOperator*{\essinf}{ess\,inf} % Īnfimum essentiāle
+\DeclareMathOperator*{\esssup}{ess\,sup} % Suprēmum essentiāle
+
+\newcommand{\msing}{\perp} % Mēnsūrae singulārēs
+\newcommand{\mvarp}[1]{#1^+} % Variātiō positīva
+\newcommand{\mvarn}[1]{#1^-} % Variātiō negātīva
+\newcommand{\mvarpn}[1]{#1^\pm} % Variātiō positīva/negātīva
+\newcommand{\mvart}[1]{|#1|} % Variātiō totalis (mēnsūrae)
+\newcommand{\macont}{\ll} % Continuitās absolūta
+\newcommand{\rd}[2]{\frac{\dif #1}{\dif #2}} % Dērivātum Radon-Nikodym
+
+\newcommand{\suppin}{\prae} % 0 <= f <= 1 et supp f \subcopia U
+
+% Spatium Euclideum
+\newcommand{\ograd}{\nabla} % Gradiēns
+\newcommand{\Lebesgue}{\mathcal L} % sigma-algebra Lebesgue (-Stieltjes)
+\newcommand{\lebesgue}{\uplambda} % mēnsūra Lebesgue (-Stieltjes)
+\DeclareMathOperator{\oMAIG}{A} % Medium arithmeticum in globō
+\DeclareMathOperator{\oMHL}{M} % Fūnctiō Hardy-Littlewood Maxima
+\newcommand{\parti}[1]{\boldsymbol{\mathbf{#1}}} % Partītiō intervallī
+\newcommand{\partc}[1]{#1} % Compōnēns parītiōnis intervallī
+\newcommand{\partp}[1]{|#1|} % Passus (Ang. mesh) partītiōnis intervallī
+\newcommand{\partl}{\operatorname{len}} % Longitūd- partītiōnis intervallī
+\NewDocumentCommand \SPart {o m} % Cōpia partītiōnum
+{
+	\operatorname{Part}
+	\IfValueT{#1}{ _{#1} }
+	( #2 )
+}
+\NewDocumentCommand \vart{m m g} % Variātiō totalis (fūnctiōnis)
+{
+	\operatorname{VT}_{#1}^{#2} \IfValueT{#3}{ (#3) }
+}
+\newcommand{\ftvar}{\operatorname{V}} % Fūnctiō variātiōnis totalis
+\NewDocumentCommand \SVF {s g} % Spatium fūnctiōnum variātiōnum fīnītārum
+{
+	\IfBooleanTF{#1}{
+		\widehat{\operatorname{BV}}
+	}{
+		\operatorname{BV}
+	}
+	\IfValueT{#2}{ (#2) }
+}
+
+% Fūnctiōnēs trānscendentālēs
+
+\newcommand{\fGamma}{\Upgamma} % Fūnctiō Gamma
+\newcommand{\fBeta}{\Upbeta} % Fūnctiō Beta
+\newcommand{\mSph}{\upsigma} % Mēnsūra sphaerica
+% Integrale fractiōnāle Riemann-Liouville
+% Args: Base point \DifRL{Basis}_variābile^exponēns f
+\NewDocumentCommand \DifRL {g}
+{
+	\prescript
+	{\scaleobj{0.7}{\mathsf{RL}}}
+	{\IfValueTF{#1}{#1}{0}}
+	{\Dif}
+}
+\newcommand{\odiv}{\nabla\dotp} % Divergentia
+
+% Theōria distribūtiōnum
+\newcommand{\cvolv}{\ast} % Convolūtiō
+% Multī-Index
+\newcommand{\mui}[1]{\boldsymbol{#1}} % Multī-index
+\newcommand{\muio}[1]{\left| #1 \right|} % Ōrdō multī-indicis
+\newcommand{\muic}[1]{#1} % Compōnēns multī-indicis
+
+\NewDocumentCommand \oFourier {g} % Trānsfōrmātiō Fourier
+{
+	\mathcal F
+	\IfValueT{#1}{ \left\{ #1 \right\} }
+}
+\NewDocumentCommand \oLaplace {g} % Trānsfōrmātiō Laplace
+{
+	\mathcal L
+	\IfValueT{#1}{ \left\{ #1 \right\} }
+}
+
+% Geōmetria
+\newcommand{\sSph}{\mathbb S} % Sphaera
+\newcommand{\sTorus}{\mathbb T} % Torus
+
+% Analysis Complexa
+
+\newcommand{\ointo}{\ointcounterclockwise} % Circulātiō dīrecta
+% Residuum: \res{ Fūnc. }{ Punctus }
+\newcommand{\res}[2]{\operatorname{Res}\left( #1;#2 \right)}
+
+% Theoria Numerorum
+\newcommand{\ieuler}{\upvarphi} % Indicātrix Eulera
+
+% Infōrmatica
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\renewcommand\algorithmicthen{}
+\renewcommand\algorithmicdo{}
+\MakeRobust{\Call}
+%
+% TODO: Utere "\gets" pro for-loop
+% TODO: Utere "\sit" pro variabilia
+%
