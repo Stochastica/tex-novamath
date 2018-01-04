@@ -1,0 +1,23 @@
+\ProvidesPackage{novamath-physica}
+
+\usepackage{amsthm} % AMS Theōrēmata
+\usepackage{mdframed} % Corpus theōrēmatum
+\usepackage{siunitx} % Unitātēs SI
+
+\newenvironment{Lex}[1][]
+{
+	\begin{mdframed}
+	[
+		nobreak=true,
+		linecolor=green,
+		linewidth=2pt,
+		frametitle={#1},
+		frametitlerule=true,
+		frametitlebackgroundcolor=gray!20,
+		backgroundcolor=gray!2,
+		innertopmargin=\topskip,
+	]
+}{
+	\end{mdframed}
+}
+
