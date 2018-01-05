@@ -24,3 +24,12 @@ Then execute
 texhash $TEXMFHOME
 ```
 to update the available tex packages.
+
+The following packages are available:
+
+1. novamath-symbola: Redefined Latinised mathematics symbols
+2. novamath-thm: Theorem environments (theorema, propositio, etc.) The option
+	[lingua=...] can be fed into the package to select the language. Currently
+	latina and english are supported.
+3. novamath-physica: Physical symbols
+4. novamath: Latin NovaMathematica preamble.
