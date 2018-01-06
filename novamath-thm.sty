@@ -70,10 +70,18 @@
 	{latina}{Conjectūra}
 	{english}{Conjecture}
 }[Conjecture]}[section]
+\newtheorem*{conjectura*}{\IfStrEqCase{\novamath@lingua}{
+	{latina}{Conjectūra}
+	{english}{Conjecture}
+}[Conjecture]}
 \newtheorem{problema}{\IfStrEqCase{\novamath@lingua}{
 	{latina}{Problēma}
 	{english}{Problem}
 }[Problem]}[section]
+\newtheorem*{problema*}{\IfStrEqCase{\novamath@lingua}{
+	{latina}{Problēma}
+	{english}{Problem}
+}[Problem]}
 
 \theoremstyle{remark}
 \newtheorem*{nota}{\IfStrEqCase{\novamath@lingua}{
