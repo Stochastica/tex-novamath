@@ -68,7 +68,7 @@
 \let\nexist\nexists % Nōn existit
 \let\aequi\equiv % Aequivalentia prōpositiōnum
 \let\concludit\models % Conclusiō
-\let\deter\mapsto % Dētermināre
+\let\evalad\mapsto % Evalōrāre ad...
 \newcommand{\substi}[1]{\left[ #1 \right]} % Substutiō
 
 \let\adfirmat\implies
@@ -135,7 +135,7 @@
 \let\cposit\circ % Relātiōnum compositō
 
 \let\adf\to % X \adf Y: X -> Y
-\newcommand{\iden}{\operatorname{id}} % Applicātiō īdentitās
+\DeclareMathOperator{\iden}{id} % Applicātiō īdentitās
 \newcommand{\restrictio}{\mathord{\upharpoonright}} % Restrictiō relātiōnis
 \newcommand{\SA}[2]{[#1 \to #2]} % Spatium applicātiōnum
 \newcommand{\potens}{\rightarrow} % Applicātiō potēns (f^\potens)
@@ -334,6 +334,7 @@
 %\newcommand{\vcomp}[1]{\mathit{#1}} % Compōnēns vectōris
 \newcommand{\vconcat}{\boldsymbol\oplus} % Concatēnātiō vectōrum
 \DeclareMathOperator{\nuc}{nuc} % Nucleus (Kernel)
+\DeclareMathOperator{\adj}{adj}
 
 % Basis spatiī Euclideī
 % Arg: N. Dīmensiōnum, Index
@@ -447,7 +448,7 @@
 		\frac{\partial #2}{\partial #3}
 	}
 }
-\newcommand{\detin}[1]{\left. #1 \right|} % Dētermināre in...
+\newcommand{\eval}[1]{\left. #1 \right|} % Evalōrā in...
 
 % Symbola asymptōtica: \Asy[ Līmes ]{ Fūnctiō }
 \NewDocumentCommand \AsyO  {o g} { \Upomicron ( #2\IfValueT{#1}{, #1 } ) }
@@ -677,3 +678,4 @@
 % TODO: Utere "\gets" pro for-loop
 % TODO: Utere "\sit" pro variabilia
 %
+\let\fiat\gets
