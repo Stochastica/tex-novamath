@@ -88,10 +88,12 @@
 	{latina}{Nota}
 	{english}{Note}
 }[Note]}
-\newtheorem*{cave}{\IfStrEqCase{\novamath@lingua}{
-	{latina}{Cavē}
-	{english}{Warning}
-}[Warning]}
+\newtheorem*{cave}{%
+	{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}}%
+%\newtheorem*{cave}{\IfStrEqCase{\novamath@lingua}{
+%	{latina}{Cavē}
+%	{english}{Warning}
+%}[Warning]}
 
 \newenvironment{Metadefinitio}[1][]
 {
