@@ -26,6 +26,10 @@
 	{latina}{Theōrēma}
 	{english}{Theorem}
 }[Theorem]}[section]
+\newtheorem*{theorema*}        {\IfStrEqCase{\novamath@lingua}{
+	{latina}{Theōrēma}
+	{english}{Theorem}
+}[Theorem]}
 \newtheorem{theoremaSchema}  [theorema]{\IfStrEqCase{\novamath@lingua}{
 	{latina}{Theōrēma Schēma}
 	{english}{Theorem Schema}
@@ -34,11 +38,19 @@
 	{latina}{Prōpositiō}
 	{english}{Proposition}
 }[Proposition]}
+\newtheorem*{propositio*}      {\IfStrEqCase{\novamath@lingua}{
+	{latina}{Prōpositiō}
+	{english}{Proposition}
+}[Proposition]}
 \newtheorem{propositioSchema}[theorema]{\IfStrEqCase{\novamath@lingua}{
 	{latina}{Prōpositiō Schēma}
 	{english}{Proposition Schema}
 }[Proposition Schema]}
 \newtheorem{lemma}           [theorema]{\IfStrEqCase{\novamath@lingua}{
+	{latina}{Lemma}
+	{english}{Lemma}
+}[Lemma]}
+\newtheorem*{lemma*}           {\IfStrEqCase{\novamath@lingua}{
 	{latina}{Lemma}
 	{english}{Lemma}
 }[Lemma]}
